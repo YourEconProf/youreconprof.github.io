@@ -102,11 +102,13 @@ read.csv(file="~/data/population-pyramid.csv") |>
 
 ```
 
-The most important factor to understand in the labor market is the change in demographics of the US labor force. Baby Boomers were born from 1945 to 1965, meaning that the youngest baby boomers are 58, and the majority are over 65. The generation entering the labor force (Gen Z) are a relatively small generation, like generation X. Figure 1 shows the current shape of the population pyramid. The size of the Millenial (aged 25-44) generation is clear, as is the small size of Gen X (45-60). In this figure, Gen Z looks similar to Boomers, but this is exagerated by the fact that Baby Boomers are already at an age where death rates have increased. Figure 2 is the population pyramid as of 2013, and the relative size of the four generations is clear.
-
 ::: column-margin
 The beginning and end of generations is fuzzy. I used the dates from https://en.wikipedia.org/wiki/Millennials.
 :::
+
+The most important factor to understand in the labor market is the change in demographics of the US labor force. Baby Boomers were born from 1945 to 1965, meaning that the youngest baby boomers are 58, and the majority are over 65. The generation entering the labor force (Gen Z) are a relatively small generation, like generation X. Figure 1 shows the current shape of the population pyramid. The size of the Millenial (aged 25-44) generation is clear, as is the small size of Gen X (45-60). In this figure, Gen Z looks similar to Boomers, but this is exagerated by the fact that Baby Boomers are already at an age where death rates have increased. Figure 2 is the population pyramid as of 2013, and the relative size of the four generations is clear.
+
+
 
 ```{r}
 #| label: quits-rate

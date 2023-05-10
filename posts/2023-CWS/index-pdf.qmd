@@ -9,16 +9,16 @@ author:
 title-block-banner: true
 date: "19 May 2023"
 format: 
-  html: 
-    toc: false
   pdf: 
     toc: false
-    documentclass: scrartcl
+    documentclass: article
     papersize: letter
     colorlinks: true
     fontsize: 9pt
-    margin-top: .25in
-    margin-bottom: .25in
+    margin-right: 1in
+    margin-left: 1in
+    margin-top: 1in
+    margin-bottom: 1in
 editor: visual
 ---
 
@@ -44,7 +44,7 @@ The economy is actually solid, particularly from the perspective of climbing gym
 #| include: true
 #| echo: false
 #| warning: false
-#| fig-height: 3
+#| fig-height: 2.5
 
 read.csv(file="~/data/population-pyramid.csv") |>
   filter(Year==2023) |> 
@@ -73,15 +73,15 @@ read.csv(file="~/data/population-pyramid.csv") |>
 
 ```
 
-The most important factor to understand in the labor market is the change in demographics of the US labor force. Baby Boomers were born from 1945 to 1965, meaning that the youngest baby boomers are 58, and the majority are over 65. The generation entering the labor force (Gen Z) are a relatively small generation, like generation X. Figure 1 shows the current shape of the population pyramid. The size of the Millenial (aged 25-44) generation is clear, as is the small size of Gen X (45-60). In this figure, Gen Z looks similar to Boomers, but this is exagerated by the fact that Baby Boomers are already at an age where death rates have increased. Figure 2 is the population pyramid as of 2013, and the relative size of the four generations is clear.
+The most important factor to understand in the labor market is the change in demographics of the US labor force. Baby Boomers^[The beginning and end of generations is fuzzy. I used the dates from https://en.wikipedia.org/wiki/Millennials.] were born from 1945 to 1965, meaning that the youngest baby boomers are 58, and the majority are over 65. The generation entering the labor force (Gen Z) are a relatively small generation, like generation X. Figure 1 shows the current shape of the population pyramid. The size of the Millenial (aged 25-44) generation is clear, as is the small size of Gen X (45-60). In this figure, Gen Z looks similar to Boomers, but this is exagerated by the fact that Baby Boomers are already at an age where death rates have increased. Figure 2 is the population pyramid as of 2013, and the relative size of the four generations is clear.
 
 ```{r}
 #| label: demographics2
 #| fig-cap: "US Population by Age: 2023"
 #| include: true
-#| column: margin
 #| echo: false
 #| warning: false
+#| fig-height: 2.5
 
 read.csv(file="~/data/population-pyramid.csv") |>
   filter(Year==2013) |> 
@@ -107,18 +107,17 @@ read.csv(file="~/data/population-pyramid.csv") |>
 ```
 
 ::: column-margin
-The beginning and end of generations is fuzzy. I used the dates from https://en.wikipedia.org/wiki/Millennials.
 :::
 
 The reason that this change matters so much in this moment is visible from the labor force participation rates by age group. Figure 3 plots the age 25-54 group and the 55+ group, and the change before and after COVID is noticeable. Even as the 55+ group continues to grow in size relative to the 25-54 group due to demographics, its participation rate has fallen by 1.75% or so while the rate for ages 25-54 has returned to pre-COVID levels.
 
 ```{r}
 #| label: participation
-#| fig-cap: "Figure 3: Labor Force Participation"
+#| fig-cap: "Labor Force Participation"
 #| include: true
 #| echo: false
 #| warning: false
-#| fig-height: 3
+#| fig-height: 2.5
 
 p1 <- fredr::fredr(
     series_id = "LNS11300060",
@@ -156,10 +155,10 @@ The key takeaway for the labor market are that the changes we've all experienced
 
 ```{r}
 #| label: quits-rate
-#| column: margin
 #| include: true
 #| echo: false
 #| warning: false
+#| fig-height: 2.5
 
 fredr::fredr(
     series_id = "JTSQUR",
@@ -174,9 +173,8 @@ fredr::fredr(
 
 ```
 
-::: column-margin
+
 The **quits rate** is my favorite single indicator of the strength of the labor market. It is the percentage of Americans who voluntarily quit their job each month. It *does not* include retirements. So in March of 2023 (the most recent data available) 2.5% of workers quit their job. While this is down from the peak of 3% hit in November 2021 and April 2022, it is still quite high compared to the previous 20 years.
-:::
 
 While every generation complains about various characteristics of 'the young' particularly their work ethic, Generation Z has an advantage that labor is in short supply, so they can demand more out of their workplaces. Over time, we will see more and more firms and industries attempt to reduce their dependence on labor, such as kiosks in airports and McDonalds and firms either offshoring or virtualizing support. As we budget, wages will not be declining, and the more skilled the position, the higher the wage growth, though not at the levels that we've seen over the past three years.
 
@@ -188,8 +186,7 @@ While every generation complains about various characteristics of 'the young' pa
 #| include: true
 #| echo: false
 #| warning: false
-#| fig-height: 3
-
+#| fig-height: 2.5
 
 fredr::fredr(
     series_id = "USACPICORMINMEI",
@@ -236,7 +233,7 @@ The combination of all of these led to much higher rates of price increases. In 
 #| include: true
 #| echo: false
 #| warning: false
-#| fig-height: 3
+#| fig-height: 2.5
 
 left_join(
   fredr::fredr(
@@ -285,7 +282,6 @@ Finally, a question that I'm hearing more and more is whether very low or zero i
 #| include: true
 #| echo: false
 #| warning: false
-#| fig-height: 3
 
 
 fredr::fredr(
